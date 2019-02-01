@@ -1,5 +1,5 @@
 # AndroidAlarmClockApp
-
+A Simple Alarm colock app that is used as an excrsise to teach begginers in Android how to create and use services in addtion it teachs them how to interact with diffrent view's and how to create a notification and finally how to interact with the phone to use the rington as an alarm. 
 
 # Screenshots 
 <img src="/screenshots/screenshot1.png" width="220" height="400"> <img src="/screenshots/screenshot2.png" width="220" height="400"> 
