@@ -1,5 +1,5 @@
 # AndroidAlarmClockApp
-A Simple Alarm colock app that is used as an excrsise to teach begginers in Android how to create and use services in addtion it teachs them how to interact with diffrent view's and how to create a notification and finally how to interact with the phone to use the rington as an alarm. 
+A Simple Alarm clock app that is used as an exercise to teach beginners in Android how to create and use services in addition, it teaches them how to interact with different view's and how to create a notification and finally how to interact with the phone to use the ringtone as an alarm. 
 
 # Screenshots 
 <img src="/screenshots/screenshot1.png" width="220" height="400"> <img src="/screenshots/screenshot2.png" width="220" height="400"> 
@@ -7,11 +7,11 @@ A Simple Alarm colock app that is used as an excrsise to teach begginers in Andr
 Notification 
 <img src="/screenshots/screenshot3_noti.png" > 
 
-# Step to re-crearte 
+# Step to re-create 
 
 1. Create a new project in Android Studio (Choose the Empty Activity)
 2. Navigate to app/res/layout/activity_main.xml
-3. Open the "Text" view and the replace the xml code with the below code or Change the ConstraintLayout to RelativeLayout. Add TimePicker, ToggleButton and a TextView into your layout
+3. Open the "Text" view and replace the XML code with the below code or Change the ConstraintLayout to RelativeLayout. Add TimePicker, ToggleButton, and a TextView into your layout
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -52,8 +52,8 @@ Notification
 
 </RelativeLayout>
 ```
-4. Create a new Java file name it **AlarmService.java** in the following path app/java/"The first folder"/
-5. Replace the code in that file with the below code ("Dont remove the first line starting with package")
+4. Create a new Java file named it **AlarmService.java** in the following path app/java/"The first folder"/
+5. Replace the code in that file with the below code ("Don't remove the first line starting with the package")
 
 ```
 import android.app.IntentService;
@@ -96,8 +96,8 @@ public class AlarmService extends IntentService {
     }
 }
 ```
-6.  Create a new Java file name it **AlarmReceiver.java** in the following path app/java/"The first folder"/
-7.  Replace the code in that file with the below code ("Dont remove the first line starting with package")
+6.  Create a new Java file named it **AlarmReceiver.java** in the following path app/java/"The first folder"/
+7.  Replace the code in that file with the below code ("Don't remove the first line starting with the package")
 ```
 import android.app.Activity;
 import android.content.ComponentName;
@@ -154,14 +154,14 @@ public class AlarmReceiver extends WakefulBroadcastReceiver {
         inst = this;
     }
 ```
-10. Inside of the OnCreate Method add the following code 
+10. Inside of the OnCreate method add the following code 
 ```
         alarmTimePicker = (TimePicker) findViewById(R.id.alarmTimePicker);
         alarmTextView = (TextView) findViewById(R.id.alarmText);
         ToggleButton alarmToggle = (ToggleButton) findViewById(R.id.alarmToggle);
         alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 ```
-11. After the OnCreate Method add the following code 
+11. After the OnCreate Method, add the following code 
 ```
  public void onToggleClicked(View view) {
         if (((ToggleButton) view).isChecked()) {
@@ -185,13 +185,13 @@ public class AlarmReceiver extends WakefulBroadcastReceiver {
 ```
 
 12. Open the **AndroidManifest.xml** and add the following code before ```<application android:..... ```
-The bellow is permission that will allow the app to keep the screen awake 
+The bellow is the permission that will allow the app to keep the screen awake. 
 ```
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
 ```
 13. In the same file **AndroidManifest.xml**  After the last ```</activity> ``` and before ```</application>``` add the code bellow 
-The code bellow is a Service that will run in the background
+The code below is a Service that will run in the background.
 ```
           <service
             android:name=".AlarmService"
